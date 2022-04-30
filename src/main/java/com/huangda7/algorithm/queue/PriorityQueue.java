@@ -6,12 +6,12 @@ public class PriorityQueue {
         int[] nums = {3, 2, 1, 5, 6, 4};
         int k = 3;
         java.util.PriorityQueue<Integer> priorityQueue = new java.util.PriorityQueue<>(k);
-        for (int i = 0; i < nums.length; i++) {
+        for (int num : nums) {
             if (priorityQueue.size() < k) {
-                priorityQueue.offer(nums[i]);
-            } else if (priorityQueue.peek()<nums[i]) {
+                priorityQueue.offer(num);
+            } else if (priorityQueue.peek() < num) {
                 priorityQueue.remove();
-                priorityQueue.offer(nums[i]);
+                priorityQueue.offer(num);
             }
             System.out.println(priorityQueue.toString());
         }
